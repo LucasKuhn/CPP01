@@ -4,7 +4,8 @@
 # include <iostream>
 # include <fstream>
 # include <string>
-#include "colors.hpp"
+# include <stdlib.h>
+# include "colors.hpp"
 
 class Sed
 {

@@ -18,13 +18,13 @@ Sed::~Sed()
 
 int Sed::run(void) const
 {
-	std::ifstream ifs(this->_infile);
+	std::ifstream ifs(this->_infile.c_str());
 	if (!ifs.is_open())
 	{
 		std::cerr << "Could not open input file." << std::endl;
 		return EXIT_FAILURE;
 	}
-	std::ofstream ofs(this->_outfile);
+	std::ofstream ofs(this->_outfile.c_str());
 	if (!ofs.is_open())
 	{
 		std::cerr << "Could not open output file." << std::endl;
@@ -50,9 +50,3 @@ int Sed::run(void) const
 	return EXIT_SUCCESS;
 }
 
-// while (std::getline(ifs, line))
-// {
-// 	while (line.find(this->_to_find) != std::string::npos)
-// 		line.replace(line.find(this->_to_find), this->_to_find.length(), this->_to_replace);
-// 	ofs << line << std::endl;
-// }
